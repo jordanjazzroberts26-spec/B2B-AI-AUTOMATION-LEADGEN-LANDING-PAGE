@@ -92,14 +92,14 @@ Focus on depth, subtle animation, and tactile feel without heavy libraries or pe
 
 ## Checklist (Progress Tracking)
 
-- [ ] Phase 1 – Noise texture + base bg updates
-- [ ] Phase 2 – Hero orbs
-- [ ] Phase 2 – Hero canvas particles
-- [ ] Phase 3 – Gradient meshes on key sections
-- [ ] Phase 4 – Hover effects (cards, steps, stats)
-- [ ] Phase 4 – Animated audit card line
-- [ ] Phase 5 – Subtle parallax
-- [ ] Phase 5 – Navbar active state & scroll style
+- [x] Phase 1 – Noise texture + base bg updates
+- [x] Phase 2 – Hero orbs
+- [x] Phase 2 – Hero canvas particles
+- [x] Phase 3 – Gradient meshes on key sections
+- [x] Phase 4 – Hover effects (cards, steps, stats)
+- [x] Phase 4 – Animated audit card line
+- [x] Phase 5 – Subtle parallax
+- [x] Phase 5 – Navbar active state & scroll style
 - [ ] Mobile / performance testing & fallbacks
 - [ ] Final visual QA + motion comfort check
 - [ ] Merge / deploy

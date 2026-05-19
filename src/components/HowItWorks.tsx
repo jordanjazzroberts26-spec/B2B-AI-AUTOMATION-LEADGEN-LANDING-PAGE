@@ -25,7 +25,7 @@ export function HowItWorks() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden mt-14">
           {steps.map((step, i) => (
-            <div key={step.num} className={`reveal delay-r${i + 1} bg-surface p-7 md:p-10 flex flex-col gap-5 hover:bg-surface-2 transition-colors`}>
+            <div key={step.num} className={`reveal delay-r${i + 1} bg-surface p-7 md:p-10 flex flex-col gap-5 hover:bg-surface-2 interactive-step-card`}>
               <div className="text-xs font-bold tracking-widest text-accent-2 tabular-nums">{step.num}</div>
               <div className="text-base font-semibold text-white leading-snug">{step.title}</div>
               <p className="text-sm text-muted leading-relaxed">{step.desc}</p>

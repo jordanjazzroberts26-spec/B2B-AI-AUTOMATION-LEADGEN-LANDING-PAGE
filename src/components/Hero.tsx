@@ -1,9 +1,19 @@
 import { ArrowRight } from 'lucide-react';
+import { CanvasParticles } from './CanvasParticles';
+import { useScrollProgress } from '../hooks/useScrollProgress';
 
 export function Hero() {
+  const scrollY = useScrollProgress();
+
   return (
     <section id="hero" className="pt-32 md:pt-48 pb-20 md:pb-36 relative overflow-hidden">
       <div className="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(108,99,255,0.13)_0%,transparent_70%)] pointer-events-none" />
+      <div style={{ transform: `translateY(${scrollY * 0.08}px)` }} className="absolute inset-0 pointer-events-none z-[1]">
+        <div className="hero-orb-1" />
+        <div className="hero-orb-2" />
+        <div className="hero-orb-3" />
+      </div>
+      <CanvasParticles />
       <div className="hero-grid-bg absolute inset-0 pointer-events-none" />
       <div className="max-w-container mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-[820px]">

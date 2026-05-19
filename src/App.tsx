@@ -1,6 +1,7 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
+import { LeakageCalculator } from './components/LeakageCalculator';
 import { WhoItsFor } from './components/WhoItsFor';
 import { HowItWorks } from './components/HowItWorks';
 import { Credibility } from './components/Credibility';
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Hero />
       <Stats />
+      <LeakageCalculator />
       <WhoItsFor />
       <HowItWorks />
       <Credibility />
