@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
+import { useScrollProgress } from '../hooks/useScrollProgress';
 import { Calendar, FileText, Settings, ShieldCheck, CheckSquare, Sparkles } from 'lucide-react';
 
 const steps = [
@@ -11,6 +12,7 @@ const steps = [
 
 export function WhatHappensNext() {
   const ref = useReveal();
+  const scrollY = useScrollProgress();
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   const toggleStep = (index: number) => {
@@ -96,7 +98,10 @@ export function WhatHappensNext() {
                   </div>
                 </div>
               </div>
-              <div className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner">
+              <div 
+                className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner"
+                style={{ transform: `translateY(${(scrollY - 1800) * 0.03}px)` }}
+              >
                 <div className="border-b border-border/80 pb-2 mb-3 text-white flex justify-between items-center">
                   <span>AGENDA: DISCOVERY_MEETING.md</span>
                   <span className="w-2 h-2 rounded-full bg-accent-2 animate-pulse" />
@@ -135,7 +140,10 @@ export function WhatHappensNext() {
                   </div>
                 </div>
               </div>
-              <div className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner flex flex-col gap-2.5">
+              <div 
+                className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner flex flex-col gap-2.5"
+                style={{ transform: `translateY(${(scrollY - 1800) * 0.03}px)` }}
+              >
                 <div className="border-b border-border/80 pb-2 text-white flex justify-between items-center">
                   <span>ANALYSIS: PIPELINE_LOGS.log</span>
                   <span className="text-red-400 font-bold">WARNINGS FOUND</span>
@@ -181,7 +189,10 @@ export function WhatHappensNext() {
                   </div>
                 </div>
               </div>
-              <div className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner">
+              <div 
+                className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner"
+                style={{ transform: `translateY(${(scrollY - 1800) * 0.03}px)` }}
+              >
                 <div className="border-b border-border/80 pb-2 mb-3 text-white flex justify-between items-center">
                   <span>DELIVERABLE: AUTOMATION_BLUEPRINT.pdf</span>
                   <span className="text-accent-2 font-bold flex items-center gap-1"><Sparkles className="w-2.5 h-2.5" /> VERIFIED</span>
@@ -221,7 +232,10 @@ export function WhatHappensNext() {
                   </div>
                 </div>
               </div>
-              <div className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner flex flex-col gap-3 justify-center items-center h-full min-h-[140px] text-center">
+              <div 
+                className="bg-surface-2 border border-border/80 rounded-lg p-5 font-mono text-[10px] text-muted leading-relaxed shadow-inner flex flex-col gap-3 justify-center items-center h-full min-h-[140px] text-center"
+                style={{ transform: `translateY(${(scrollY - 1800) * 0.03}px)` }}
+              >
                 <div className="text-white font-bold text-xs">SOVEREIGN OPTIONS</div>
                 <div className="flex flex-col gap-2 w-full max-w-[200px]">
                   <div className="bg-white/5 border border-border py-2 px-3 rounded text-white text-[9px] font-bold">

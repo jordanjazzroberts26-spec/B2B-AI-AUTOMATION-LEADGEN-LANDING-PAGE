@@ -9,10 +9,12 @@ import { AuditOffer } from './components/AuditOffer';
 import { WhatHappensNext } from './components/WhatHappensNext';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { CursorGlow } from './components/CursorGlow';
 
 function App() {
   return (
-    <div className="min-h-screen bg-bg text-muted font-sans">
+    <div className="min-h-screen bg-bg bg-mesh-fluid text-muted font-sans relative">
+      <CursorGlow />
       <Navbar />
       <Hero />
       <Stats />

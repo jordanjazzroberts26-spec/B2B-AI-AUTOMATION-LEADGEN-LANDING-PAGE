@@ -1,9 +1,11 @@
 import { ArrowRight } from 'lucide-react';
 import { CanvasParticles } from './CanvasParticles';
 import { useScrollProgress } from '../hooks/useScrollProgress';
+import { useScrambleText } from '../hooks/useScrambleText';
 
 export function Hero() {
   const scrollY = useScrollProgress();
+  const { displayText: scrambledHeadline } = useScrambleText("systems that weren't built to scale.", 40, 1500);
 
   return (
     <section id="hero" className="pt-32 md:pt-48 pb-20 md:pb-36 relative overflow-hidden">
@@ -24,7 +26,7 @@ export function Hero() {
           <h1 className="text-white mb-6 animate-fade-up [animation-delay:0.12s]">
             Your business runs on<br />
             <em className="not-italic bg-gradient-to-br from-accent-2 to-accent bg-clip-text text-transparent">
-              systems that weren't built to scale.
+              {scrambledHeadline}
             </em>
           </h1>
           <p className="text-lg md:text-xl text-muted max-w-[580px] mb-11 leading-relaxed animate-fade-up [animation-delay:0.24s]">

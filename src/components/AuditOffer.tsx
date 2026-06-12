@@ -23,7 +23,7 @@ export function AuditOffer() {
     team_size: '',
     challenge: '',
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'analyzing' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -38,7 +38,10 @@ export function AuditOffer() {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 2500);
     } else {
-      setStatus('success');
+      setStatus('analyzing');
+      setTimeout(() => {
+        setStatus('success');
+      }, 1800);
     }
   };
 
@@ -78,6 +81,39 @@ export function AuditOffer() {
                 <p className="text-xs text-muted leading-relaxed max-w-[280px]">
                   Thank you, {form.first_name}. We have logged your operational details and will reach out to schedule your 20-minute call within two business days.
                 </p>
+              </div>
+            ) : status === 'analyzing' ? (
+              <div className="flex flex-col justify-center p-6 bg-surface-2 border border-border rounded-xl min-h-[260px] animate-fade-in">
+                <div className="flex items-center gap-3 mb-6 border-b border-border/80 pb-4">
+                  <div className="w-4 h-4 rounded-full border-2 border-accent-2 border-t-transparent animate-spin" />
+                  <span className="text-xs font-bold text-accent-2 uppercase tracking-widest">Processing Data</span>
+                </div>
+                
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="h-1.5 w-1.5 rounded-full bg-accent-2 animate-pulse" />
+                    <div className="h-2 w-3/4 bg-white/10 rounded overflow-hidden relative">
+                      <div className="absolute inset-0 bg-white/20 animate-[scanLight_1.5s_ease-in-out_infinite]" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-1.5 w-1.5 rounded-full bg-white/20" style={{ animation: 'pulse 2s infinite 0.2s' }} />
+                    <div className="h-2 w-1/2 bg-white/10 rounded overflow-hidden relative">
+                      <div className="absolute inset-0 bg-white/20 animate-[scanLight_1.5s_ease-in-out_infinite]" style={{ animationDelay: '0.4s' }} />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-1.5 w-1.5 rounded-full bg-white/20" style={{ animation: 'pulse 2s infinite 0.4s' }} />
+                    <div className="h-2 w-5/6 bg-white/10 rounded overflow-hidden relative">
+                      <div className="absolute inset-0 bg-white/20 animate-[scanLight_1.5s_ease-in-out_infinite]" style={{ animationDelay: '0.8s' }} />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-[10px] text-muted font-mono bg-bg/50 border border-border p-3 rounded">
+                  <span className="text-accent-2 mr-2">sys_log:</span> 
+                  <span className="animate-pulse">Encrypting & mapping...</span>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
