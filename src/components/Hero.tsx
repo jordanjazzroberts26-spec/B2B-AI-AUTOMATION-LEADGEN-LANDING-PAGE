@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Bot, Mail, Instagram } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { CanvasParticles } from './CanvasParticles';
 import { useScrollProgress } from '../hooks/useScrollProgress';
 import { useScrambleText } from '../hooks/useScrambleText';
@@ -21,16 +21,6 @@ export function Hero() {
 
       <CanvasParticles />
       <div className="hero-grid-bg absolute inset-0 pointer-events-none" />
-
-      {/* Floating service chips with subtle parallax */}
-      <div
-        style={{ transform: `translateY(${scrollY * -0.06}px)` }}
-        className="hidden lg:flex absolute top-44 right-12 xl:right-24 flex-col gap-4 z-[2] pointer-events-none"
-      >
-        <FloatChip icon={<Instagram className="w-4 h-4" />} label="Instagram DM Bot" delay="0s" offset="float-a" />
-        <FloatChip icon={<Bot className="w-4 h-4" />} label="AI Chatbot" delay="0.4s" offset="float-b" />
-        <FloatChip icon={<Mail className="w-4 h-4" />} label="Lead Automation" delay="0.8s" offset="float-c" />
-      </div>
 
       <div className="max-w-container mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-[840px]">
@@ -89,24 +79,4 @@ function Stat({ value, label }: { value: string; label: string }) {
   );
 }
 
-function FloatChip({
-  icon,
-  label,
-  delay,
-  offset,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  delay: string;
-  offset: string;
-}) {
-  return (
-    <div
-      className={`${offset} flex items-center gap-2.5 bg-surface/70 backdrop-blur-md border border-border rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]`}
-      style={{ animationDelay: delay }}
-    >
-      <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/15 text-accent-2">{icon}</span>
-      <span className="text-sm font-medium text-white whitespace-nowrap">{label}</span>
-    </div>
-  );
-}
+
