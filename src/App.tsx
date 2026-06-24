@@ -8,6 +8,7 @@ import { Credibility } from './components/Credibility';
 import { AuditOffer } from './components/AuditOffer';
 import { WhatHappensNext } from './components/WhatHappensNext';
 import { FinalCTA } from './components/FinalCTA';
+import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CursorGlow } from './components/CursorGlow';
 
@@ -25,6 +26,7 @@ function App() {
       <AuditOffer />
       <WhatHappensNext />
       <FinalCTA />
+      <Contact />
       <Footer />
     </div>
   );
