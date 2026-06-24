@@ -1,4 +1,4 @@
-import { PremiumHero } from "@/components/ui/hero";
+import { PremiumHero } from "./ui/hero";
 
 export default function DemoOne() {
   return <PremiumHero />;

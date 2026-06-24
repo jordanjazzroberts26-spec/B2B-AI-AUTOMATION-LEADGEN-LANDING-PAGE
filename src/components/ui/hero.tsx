@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./button";
 import { MoveRight } from "lucide-react";
 
 interface Beam {
@@ -103,11 +103,11 @@ export const PremiumHero = () => {
 
       const pulsingOpacity = Math.min(1, beam.opacity * (0.8 + Math.sin(beam.pulse) * 0.4));
       const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
-      gradient.addColorStop(0, `rgba(0,255,255,0)`);
-      gradient.addColorStop(0.2, `rgba(0,255,255,${pulsingOpacity * 0.5})`);
-      gradient.addColorStop(0.5, `rgba(0,255,255,${pulsingOpacity})`);
-      gradient.addColorStop(0.8, `rgba(0,255,255,${pulsingOpacity * 0.5})`);
-      gradient.addColorStop(1, `rgba(0,255,255,0)`);
+      gradient.addColorStop(0, `rgba(0,212,255,0)`);
+      gradient.addColorStop(0.2, `rgba(0,212,255,${pulsingOpacity * 0.5})`);
+      gradient.addColorStop(0.5, `rgba(0,212,255,${pulsingOpacity})`);
+      gradient.addColorStop(0.8, `rgba(0,212,255,${pulsingOpacity * 0.5})`);
+      gradient.addColorStop(1, `rgba(0,212,255,0)`);
 
       ctx.fillStyle = gradient;
       ctx.filter = `blur(${2 + beam.layer * 2}px)`;
@@ -119,8 +119,8 @@ export const PremiumHero = () => {
       if (!canvas || !ctx) return;
 
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#050505");
-      gradient.addColorStop(1, "#111111");
+      gradient.addColorStop(0, "rgba(10, 10, 15, 0.5)"); // #0A0A0F matching background
+      gradient.addColorStop(1, "rgba(10, 10, 15, 0.8)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -159,18 +159,18 @@ export const PremiumHero = () => {
 
       <div className="relative z-20 flex h-screen w-full items-center justify-center px-6 text-center">
         <div className="container mx-auto flex flex-col items-center gap-12 text-center">
-          <Button variant="secondary" size="sm" className="gap-4">
+          <button className="inline-flex items-center gap-4 border border-neon/30 text-neon px-4 py-2 rounded-full text-sm font-semibold tracking-wide hover:shadow-neon hover:border-neon/60 transition-all">
             Support for AI Models <MoveRight className="w-4 h-4" />
-          </Button>
+          </button>
 
-          <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter font-regular">
-            <span className="text-white">This is AI Power</span>
+          <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter font-bold">
+            <span className="text-primary">This is </span>
             <span className="relative flex w-full justify-center overflow-hidden md:pb-4 md:pt-1">
               &nbsp;
               {aiTitles.map((title, index) => (
                 <motion.span
                   key={index}
-                  className="absolute font-semibold text-white dark:text-gray-300"
+                  className="absolute font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon to-purple"
                   initial={{ opacity: 0, y: "-100" }}
                   transition={{ type: "spring", stiffness: 50 }}
                   animate={
@@ -185,15 +185,14 @@ export const PremiumHero = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+          <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted max-w-2xl text-center">
            Highly customizable components for building modern websites and applications that look and feel the way you mean it.
           </p>
 
-          <div className="flex flex-row gap-3 flex-wrap justify-center">
-            <Button size="sm" className="gap-4" variant="outline">
-              Explore UI CAT <MoveRight className="w-4 h-4" />
-            </Button>
-           
+          <div className="flex flex-row gap-3 flex-wrap justify-center mt-4">
+            <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-neon to-purple text-primary font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-neon hover:scale-[1.02]">
+              Explore Services <MoveRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </div>

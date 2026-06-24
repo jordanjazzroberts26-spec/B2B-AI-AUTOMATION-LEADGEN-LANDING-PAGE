@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#0a0a0b',
-        surface: '#111114',
-        'surface-2': '#18181d',
-        accent: '#6c63ff',
-        'accent-2': '#a78bfa',
-        muted: '#8a8a9a',
-        faint: '#3a3a4a',
-        border: 'rgba(255,255,255,0.07)',
+        bg: '#0A0A0F',
+        surface: '#111118',
+        border: '#1E1E2E',
+        primary: '#F0F0FF',
+        muted: '#6B7280',
+        neon: '#00D4FF',
+        purple: '#8B5CF6',
+        success: '#10B981',
+        destructive: '#EF4444',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
@@ -36,6 +37,9 @@ export default {
           to: { opacity: '1' },
         },
       },
+      boxShadow: {
+        neon: '0 0 20px rgba(0, 212, 255, 0.3)',
+      }
     },
   },
   plugins: [],
