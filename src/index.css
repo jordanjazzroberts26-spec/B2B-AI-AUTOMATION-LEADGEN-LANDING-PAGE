@@ -5,12 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --accent-color: #6c63ff;
-  --accent-2-color: #a78bfa;
-  --accent-glow: rgba(108, 99, 255, 0.15);
-  --accent-rgba: rgba(108, 99, 255, 0.05);
-  --accent-rgba-strong: rgba(108, 99, 255, 0.10);
-  --bg-color: #0a0a0b;
+  --accent-color: #00d4ff;
+  --accent-2-color: #8b5cf6;
+  --accent-glow: rgba(0, 212, 255, 0.2);
+  --accent-rgba: rgba(0, 212, 255, 0.05);
+  --accent-rgba-strong: rgba(0, 212, 255, 0.1);
+  --bg-color: #0a0a0f;
+  --text-color: #f0f0ff;
 }
 
 html {
@@ -21,7 +22,20 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   background-color: var(--bg-color);
+  color: var(--text-color);
   position: relative;
+}
+
+/* Layered radial blooms over the base background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(0, 212, 255, 0.08) 0%, transparent 60%);
 }
 
 /* Tactile grain noise overlay */
@@ -78,7 +92,7 @@ body::after {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #6c63ff, #a78bfa, #6c63ff, transparent);
+  background: linear-gradient(90deg, transparent, #00d4ff, #8b5cf6, #00d4ff, transparent);
   background-size: 200% 100%;
   animation: scanLight 9s linear infinite;
 }
@@ -90,7 +104,7 @@ body::after {
   left: calc(12.5% + 14px);
   right: calc(12.5% + 14px);
   height: 1px;
-  background: linear-gradient(90deg, #6c63ff, #3a3a4a, #3a3a4a, #6c63ff);
+  background: linear-gradient(90deg, #00d4ff, #2a2a3a, #2a2a3a, #00d4ff);
   z-index: 0;
   transform: scaleX(0);
   transform-origin: left;
@@ -151,7 +165,7 @@ body::after {
   width: 550px;
   height: 550px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
   z-index: 1;
@@ -165,7 +179,7 @@ body::after {
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 1;
@@ -179,7 +193,7 @@ body::after {
   width: 480px;
   height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
   filter: blur(50px);
   pointer-events: none;
   z-index: 1;
@@ -188,24 +202,24 @@ body::after {
 
 /* Gradient Meshes for Key Sections */
 .bg-mesh-credibility {
-  background-color: #111114;
+  background-color: #111118;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(108, 99, 255, 0.06) 0px, transparent 55%),
-    radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.05) 0px, transparent 55%);
+    radial-gradient(at 0% 0%, rgba(0, 212, 255, 0.06) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0px, transparent 55%);
 }
 
 .bg-mesh-for {
-  background-color: #111114;
+  background-color: #111118;
   background-image: 
-    radial-gradient(at 100% 0%, rgba(167, 139, 250, 0.05) 0px, transparent 55%),
-    radial-gradient(at 0% 100%, rgba(108, 99, 255, 0.06) 0px, transparent 55%);
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 55%),
+    radial-gradient(at 0% 100%, rgba(0, 212, 255, 0.06) 0px, transparent 55%);
 }
 
 .bg-mesh-next {
-  background-color: #111114;
+  background-color: #111118;
   background-image: 
-    radial-gradient(at 50% 0%, rgba(108, 99, 255, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.05) 0px, transparent 55%);
+    radial-gradient(at 50% 0%, rgba(0, 212, 255, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0px, transparent 55%);
 }
 
 /* Card Interactive Effects */
@@ -217,9 +231,9 @@ body::after {
 
 .interactive-cred-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(108, 99, 255, 0.25) !important;
+  border-color: rgba(0, 212, 255, 0.25) !important;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6),
-              0 0 20px rgba(108, 99, 255, 0.12);
+              0 0 20px rgba(0, 212, 255, 0.12);
 }
 
 .interactive-step-card {
@@ -229,8 +243,8 @@ body::after {
 }
 
 .interactive-step-card:hover {
-  box-shadow: inset 0 0 0 1px rgba(108, 99, 255, 0.22),
-              0 0 20px rgba(108, 99, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.22),
+              0 0 20px rgba(0, 212, 255, 0.12);
 }
 
 /* Tangled Stack & Automated Highway Visualizer */
@@ -240,8 +254,8 @@ body::after {
 }
 
 @keyframes pulsePurpleNode {
-  0%, 100% { box-shadow: 0 0 15px rgba(108, 99, 255, 0.2); border-color: rgba(108, 99, 255, 0.4); }
-  50% { box-shadow: 0 0 35px rgba(167, 139, 250, 0.5); border-color: rgba(167, 139, 250, 0.7); }
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); border-color: rgba(0, 212, 255, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(139, 92, 246, 0.5); border-color: rgba(139, 92, 246, 0.7); }
 }
 
 @keyframes flowRedPacket {
@@ -287,9 +301,9 @@ body::after {
   position: absolute;
   width: 8px;
   height: 8px;
-  background-color: #a78bfa;
+  background-color: #8b5cf6;
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px #6c63ff);
+  filter: drop-shadow(0 0 6px #00d4ff);
   top: 50%;
   transform: translateY(-50%);
   animation: flowPurplePacket 2.2s linear infinite;
@@ -307,8 +321,8 @@ body::after {
 
 .bg-mesh-fluid {
   background: 
-    radial-gradient(at 0% 0%, rgba(108, 99, 255, 0.05) 0px, transparent 55%),
-    radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.04) 0px, transparent 55%);
+    radial-gradient(at 0% 0%, rgba(0, 212, 255, 0.05) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.04) 0px, transparent 55%);
   background-size: 200% 200%;
   animation: mesh-drift 20s ease-in-out infinite;
 }
@@ -326,23 +340,23 @@ body::after {
 /* Form inputs */
 .form-input {
   width: 100%;
-  background-color: #0a0a0b;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background-color: #0a0a0f;
+  border: 1px solid #1e1e2e;
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
   font-size: 0.9rem;
-  color: #fff;
+  color: #f0f0ff;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-input::placeholder {
-  color: #4a4a5a;
+  color: #6b7280;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: rgba(108, 99, 255, 0.6);
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section id="hero" className="pt-36 md:pt-52 pb-24 md:pb-40 relative overflow-hidden">
       {/* Layered glow */}
-      <div className="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(108,99,255,0.16)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.16)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Parallax floating orbs */}
       <div style={{ transform: `translateY(${scrollY * 0.08}px)` }} className="absolute inset-0 pointer-events-none z-[1]">
@@ -43,7 +43,7 @@ export function Hero() {
           <div className="flex items-center gap-6 flex-wrap animate-fade-up [animation-delay:0.38s]">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 bg-accent text-white text-sm font-semibold px-8 py-3.5 rounded-lg no-underline hover:bg-[#7c74ff] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(108,99,255,0.4)] transition-all"
+              className="group inline-flex items-center gap-2 bg-accent text-bg text-sm font-semibold px-8 py-3.5 rounded-lg no-underline shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:bg-[#33ddff] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,212,255,0.45)] transition-all"
             >
               Book a Free Strategy Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

@@ -54,7 +54,7 @@ export function Portfolio() {
               key={d.title}
               type="button"
               onClick={() => setActive(i)}
-              className={`reveal delay-r${(i % 4) + 1} group relative text-left rounded-2xl overflow-hidden border border-border bg-surface aspect-video transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(108,99,255,0.45)]`}
+              className={`reveal delay-r${(i % 4) + 1} group relative text-left rounded-2xl overflow-hidden border border-border bg-surface aspect-video transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(0,212,255,0.45)]`}
             >
               <img
                 src={d.poster}
@@ -65,7 +65,7 @@ export function Portfolio() {
 
               {/* Play button */}
               <span className="absolute inset-0 flex items-center justify-center">
-                <span className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/90 text-white shadow-[0_0_40px_rgba(108,99,255,0.6)] group-hover:scale-110 transition-transform">
+                <span className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/90 text-bg shadow-[0_0_40px_rgba(0,212,255,0.6)] group-hover:scale-110 transition-transform">
                   <Play className="w-6 h-6 ml-0.5 fill-current" />
                 </span>
               </span>
@@ -110,7 +110,7 @@ export function Portfolio() {
           >
             <img src={demos[active].poster} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-6">
-              <span className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/90 text-white shadow-[0_0_40px_rgba(108,99,255,0.6)]">
+              <span className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/90 text-bg shadow-[0_0_40px_rgba(0,212,255,0.6)]">
                 <Play className="w-6 h-6 ml-0.5 fill-current" />
               </span>
               <p className="text-white font-semibold text-lg">{demos[active].title}</p>

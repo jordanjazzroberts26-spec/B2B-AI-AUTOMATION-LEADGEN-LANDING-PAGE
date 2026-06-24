@@ -46,7 +46,7 @@ export function Services() {
                 key={s.title}
                 className={`reveal delay-r${i + 1} interactive-cred-card group relative flex flex-col rounded-2xl p-7 border ${
                   s.featured
-                    ? 'bg-surface-2 border-accent/30 shadow-[0_0_40px_-12px_rgba(108,99,255,0.4)]'
+                    ? 'bg-surface-2 border-accent/30 shadow-[0_0_40px_-12px_rgba(0,212,255,0.4)]'
                     : 'bg-surface border-border'
                 }`}
               >

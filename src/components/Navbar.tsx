@@ -31,8 +31,8 @@ export function Navbar() {
     >
       <div className="max-w-container mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#hero" className="text-base font-bold tracking-tight text-white no-underline flex items-center gap-2">
-          <div className="w-7 h-7 bg-accent rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(108,99,255,0.45)]">
-            <Asterisk className="w-4 h-4 text-white" />
+          <div className="w-7 h-7 bg-accent rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(0,212,255,0.45)]">
+            <Asterisk className="w-4 h-4 text-bg" />
           </div>
           Nova
         </a>
@@ -52,7 +52,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden sm:inline-flex text-sm font-semibold no-underline px-4 py-2 border border-border rounded-md text-muted hover:border-accent-2 hover:text-white hover:shadow-[0_0_18px_rgba(108,99,255,0.25)] transition-all"
+            className="hidden sm:inline-flex text-sm font-semibold no-underline px-4 py-2 border border-border rounded-md text-muted hover:border-accent hover:text-white hover:shadow-[0_0_18px_rgba(0,212,255,0.25)] transition-all"
           >
             Let&apos;s Talk
           </a>
@@ -83,7 +83,7 @@ export function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-4 inline-flex items-center justify-center bg-accent text-white text-sm font-semibold px-6 py-3.5 rounded-lg no-underline"
+            className="mt-4 inline-flex items-center justify-center bg-accent text-bg text-sm font-semibold px-6 py-3.5 rounded-lg no-underline shadow-[0_0_20px_rgba(0,212,255,0.3)]"
           >
             Let&apos;s Talk
           </a>

@@ -22,7 +22,7 @@ export function Contact() {
 
   return (
     <section id="contact" ref={ref} className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(108,99,255,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
@@ -98,7 +98,7 @@ export function Contact() {
                   </Field>
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-2 bg-accent text-white text-sm font-semibold px-8 py-3.5 rounded-lg hover:bg-[#7c74ff] hover:shadow-[0_8px_32px_rgba(108,99,255,0.4)] transition-all"
+                    className="group inline-flex items-center justify-center gap-2 bg-accent text-bg text-sm font-semibold px-8 py-3.5 rounded-lg shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:bg-[#33ddff] hover:shadow-[0_8px_32px_rgba(0,212,255,0.45)] transition-all"
                   >
                     Send message
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

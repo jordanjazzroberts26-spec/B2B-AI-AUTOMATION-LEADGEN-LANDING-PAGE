@@ -4,14 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#0a0a0b',
-        surface: '#111114',
-        'surface-2': '#18181d',
-        accent: '#6c63ff',
-        'accent-2': '#a78bfa',
-        muted: '#8a8a9a',
-        faint: '#3a3a4a',
-        border: 'rgba(255,255,255,0.07)',
+        bg: '#0a0a0f',
+        surface: '#111118',
+        'surface-2': '#16161f',
+        accent: '#00d4ff',
+        'accent-2': '#8b5cf6',
+        muted: '#6b7280',
+        faint: '#2a2a3a',
+        border: '#1e1e2e',
+        success: '#10b981',
+        destructive: '#ef4444',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
